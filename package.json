@@ -1,0 +1,25 @@
+{
+  "name": "fullStack-JS-App",
+  "version": "1.0.0",
+  "description": "| Objectives | | :--- | | *Students will be able to:* | | Explain why custom directives are valuable | | Describe the different types of custom directives available | | Create a custom directive |",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/den-wdi-2/angular-directives-lab.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/den-wdi-2/angular-directives-lab/issues"
+  },
+  "homepage": "https://github.com/den-wdi-2/angular-directives-lab#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "mongoose": "^4.7.3"
+  }
+}

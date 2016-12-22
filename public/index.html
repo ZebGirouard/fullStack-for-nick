@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="CardsAgainstAssembly">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Cards Against Assembly™</title>
+        <link rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.css">
+        <link rel="stylesheet" href="styles/style.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
+        <script src="scripts/app.js"></script>
+        <script src="scripts/controllers/cardsController.js"></script>
+        <script src="scripts/cardDirective.js"></script>
+    </head>
+    <body>
+      <div class="container" ng-controller="CardsController as cardsController">
+        <header class="navbar">
+          <h1 class="pull-left">Cards Against Assembly</h1>
+
+          <scores></scores>
+        </header>
+
+        <section id="cards" class="container-fluid">
+          <div class="row">
+            <div class='col-sm-6 col-md-6 col-lg-4' ng-repeat="card in cardsController.questionsList" >
+              <wdi-card question="{{card.question}}" delete="cardsController.deleteCard(card._id)"></wdi-card>
+              <form ng-submit="cardsController.updateCard(card)">
+                <div class="form-group">Edit this card: </div>
+                <div class="form-group">
+                  <label for="newQuestion">Question: </label>
+                  <input id="newQuestion" type="text" ng-model="card.question" required>          
+                </div>
+                <div class="form-group">
+                  <input type="submit" value="Submit">
+                </div>
+              </form>              
+            </div>
+          </div>
+        </section>
+      <wdi-card question="Why is Angular so awesome?"></wdi-card>
+      <form ng-submit="cardsController.saveCard()">
+        <div class="form-group">Add a new card: </div>
+        <div class="form-group">
+          <label for="newQuestion">Question: </label>
+          <input id="newQuestion" type="text" ng-model="cardsController.newCard.question" placeholder="What is the one thing every GA developer needs?" required>          
+        </div>
+        <div class="form-group">
+          <input type="submit" value="Submit">
+        </div>
+      </form>
+      <footer>
+        <p>Made with <span class="heart">♥︎</span> at General Assembly</p>
+      </footer>
+      </div>
+    </body>
+</html>
